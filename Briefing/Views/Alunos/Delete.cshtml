@@ -1,0 +1,65 @@
+﻿@model Briefing.Models.Aluno
+
+<div class="container">
+    @using (Html.BeginForm("Delete", "Alunos", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m=>m.Id)
+        <div class="form">
+
+            <div class="form-title">
+                <a class="button_circle_form left" href="@Url.Action("Index")">
+                    <span class="material-icons">arrow_back</span>
+                </a>
+                <h2 class=''>Deletar Aluno</h2>
+                <h3 class="title_container">Tem ceteza que deseja deletar o aluno(a) @Model.Nome</h3>
+            </div>
+            <h2 class='field'>Aluno</h2>
+
+            <p class='field'>
+                <label class='label required' for='name'>Nome</label>
+                <input class='text-input' id='name' name='Aluno.Nome' required type='text' value='@Model.Nome' disabled>
+            </p>
+            <p class='field half'>
+                <label class='label required' for='cpfAluno'>CPF</label>
+                <label class="valid_cpf hide cpf_aluno">CPF inválido.</label>
+                <input class='cpf text-input' id='cpfAluno' name='Aluno.Cpf' required type='text' value='@Model.Cpf' disabled>
+            </p>
+            <p class='field half'>
+                <label class='label required' for='sexo'>Sexo</label>
+                <input class='text-input' id='sexo' name='Aluno.Sexo' required type='text' value='@Model.Sexo' disabled>
+            </p>
+            <p class='field half'>
+                <label class='label required' for='telefone'>Telefone</label>
+                <input class='text-input' id='telefone' name='Aluno.Telefone' required type='tel' value='@Model.Telefone' disabled>
+            </p>
+            <p class='field half'>
+                <label class='label required' for='rg'>Rg</label>
+                <input class='text-input' id='rg' name='Aluno.Rg' required type='text' value='@Model.Rg' disabled>
+            </p>
+            <p class='field half'>
+                <label class='label required' for='dataNascimento'>Data de Nascimento</label>
+                @Html.TextBoxFor(model => model.DataNascimento, new { @class = "text-input", Name = "Aluno.DataNascimento", @id = "dataNascimento", @required = "required", @disabled = "disabled" })
+
+            </p>
+            <p class='field half'>
+                <label class='label required' for='matricula'>Matricula</label>
+                <input class='text-input' id='matricula' name='Aluno.Matricula' required type='text' value='@Model.Matricula' disabled>
+            </p>
+            <p class='field half'>
+                <label class='label required' for='idade'>Idade</label>
+                <input class='text-input' id='idade' name='Aluno.Idade' required type='number' value='@Model.Idade' disabled>
+            </p>
+            <p class='field half'>
+                <label class='label required' for='email'>E-mail</label>
+                <input class='text-input' id='email' name='Aluno.Email' required type='email' value='@Model.Email' disabled>
+            </p>
+
+
+            <p class='field'>
+                <a class='button m-1 bg-58af9b' href="@Url.Action("Index")">Voltar</a>
+                <input class='button m-1 bg-red button-submit' type="submit" value="Deletar" />
+            </p>
+        </div>
+    }
+</div>

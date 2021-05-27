@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Briefing</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Css/NavBarEstilo.css" rel="stylesheet" />
+    <link href="~/Content/Css/HomeIndexEstilo.css" rel="stylesheet" />
+    <link href="~/Content/Css/DataTableEstilo.css" rel="stylesheet" />
+    <link href="~/Content/Css/FormEstilo.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header class="nav-bar">
+        <h1 class="font-weight-700">Briefing</h1>
+        <nav>
+            <ul class="nav_bar_links font-weight-500">
+                <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                <li><a href="@Url.Action("Index","Alunos")">Alunos</a></li>
+                <li><a href="@Url.Action("Index","Cidades")">Cidades</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr />
+
+    @RenderBody()
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+
+    <script src="~/Content/Script/DataTable.js"></script>
+    <script src="~/Content/Script/Script.js"></script>
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="~/Content/Script/Charts.js"></script>
+</body>
+</html>

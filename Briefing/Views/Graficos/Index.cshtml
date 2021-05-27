@@ -1,0 +1,12 @@
+﻿<div class="container">
+    
+    <div id="chartAlunos"></div>
+    <div id="chartCidades" class="mt-2"></div>
+</div>
+
+
+<script>
+    var dadosAlunos = @Html.Raw(Json.Encode(@ViewBag.chartAlunos));
+    var dadosCidades = @Html.Raw(Json.Encode(@ViewBag.chartCidades));
+
+</script>

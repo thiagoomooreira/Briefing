@@ -1,0 +1,35 @@
+﻿@model Briefing.Models.Cidade
+
+<div class="container">
+
+    @using (Html.BeginForm("Create", "Cidades", FormMethod.Post))
+    {
+        <div class="form">
+            @Html.AntiForgeryToken()
+
+            <div class="form-title">
+                <a class="button_circle_form left" href="@Url.Action("Index")">
+                    <span class="material-icons">arrow_back</span>
+                </a>
+                <h2 class=''>Cadastrar Cidade</h2>
+            </div>
+
+            <h2 class='field half'>Cidade</h2>
+            <h2 class='field half'></h2>
+
+            <p class='field required half'>
+                <label class='label required' for='nome'>Nome da cidade</label>
+                <input class='text-input' id='nome' name='nome' required type='text' value=''>
+            </p>
+            <p class='field required half'>
+                <label class='label required' for='estadoNome'>Nome do estado</label>
+                <input class='text-input' id='estadoNome' name='estadoNome' required type='text'>
+            </p>
+
+            <p class='field half'>
+                <input class='button button-submit' type='submit' value='Enviar'>
+            </p>
+        </div>
+
+    }
+</div>

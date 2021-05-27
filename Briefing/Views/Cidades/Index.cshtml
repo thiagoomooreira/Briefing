@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Briefing.Models.Cidade>
+
+<div class="container">
+
+    <h2 class="title_container">Todas as Cidades</h2>
+
+    <a class="button_circle" href="@Url.Action("Create","Cidades")">
+        <span class="material-icons">add</span>
+    </a>
+    <table id="table_alunos" class="content_table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome da Cidade</th>
+                <th>Estado</th>
+                <th class="table_td_icons">Visualizar</th>
+                <th class="table_td_icons">Editar</th>
+                <th class="table_td_icons">Deletar</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EstadoNome)</td>
+                    <td class="table_td_icons">
+                        <a href="@Url.Action("Details","Cidades", new { id = item.Id})">
+                            <span class="material-icons">
+                                wysiwyg
+                            </span>
+                        </a>
+                    </td>
+                    <td class="table_td_icons">
+                        <a href="@Url.Action("Edit","Cidades", new { id = item.Id})">
+                            <span class="material-icons">
+                                edit
+                            </span>
+                        </a>
+                    </td>
+                    <td class="table_td_icons">
+                        <a href="@Url.Action("Delete","Cidades", new { id = item.Id})">
+                            <span class="material-icons">
+                                delete
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

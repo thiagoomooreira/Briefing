@@ -1,0 +1,127 @@
+﻿@model Briefing.Models.Aluno
+
+
+<div class="container">
+    <div class="form">
+
+        <div class="form-title">
+            <a class="button_circle_form left" href="@Url.Action("Index")">
+                <span class="material-icons">arrow_back</span>
+            </a>
+            <h2 class=''>Visualizar Aluno</h2>
+        </div>
+
+        <h2 class='field'>Aluno</h2>
+
+        <p class='field'>
+            <label class='label required' for='name'>Nome</label>
+            <input class='text-input' id='name' name='Aluno.Nome' required type='text' value='@Model.Nome' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='cpfAluno'>CPF</label>
+            <label class="valid_cpf hide cpf_aluno">CPF inválido.</label>
+            <input class='cpf text-input' id='cpfAluno' name='Aluno.Cpf' required type='text' value='@Model.Cpf' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='sexo'>Sexo</label>
+            <input class='text-input' id='sexo' name='Aluno.Sexo' required type='text' value='@Model.Sexo' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='telefone'>Telefone</label>
+            <input class='text-input' id='telefone' name='Aluno.Telefone' required type='tel' value='@Model.Telefone' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='rg'>Rg</label>
+            <input class='text-input' id='rg' name='Aluno.Rg' required type='text' value='@Model.Rg' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='dataNascimento'>Data de Nascimento</label>
+            @Html.TextBoxFor(model => model.DataNascimento, new { @class = "text-input", Name = "Aluno.DataNascimento", @id = "dataNascimento", @required = "required", @disabled = "disabled" })
+
+        </p>
+        <p class='field half'>
+            <label class='label required' for='matricula'>Matricula</label>
+            <input class='text-input' id='matricula' name='Aluno.Matricula' required type='text' value='@Model.Matricula' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='idade'>Idade</label>
+            <input class='text-input' id='idade' name='Aluno.Idade' required type='number' value='@Model.Idade' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='email'>E-mail</label>
+            <input class='text-input' id='email' name='Aluno.Email' required type='email' value='@Model.Email' disabled>
+        </p>
+
+        <h2 class='field'>Endereço</h2>
+
+        <p class='field half'>
+            <label class='label required' for='rua'>Rua</label>
+            <input class='text-input' id='rua' name='Aluno.Endereco.Rua' required type='text' value='@Model.Endereco.Rua' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='bairro'>Bairro</label>
+            <input class='text-input' id='bairro' name='Aluno.Endereco.Bairro' required type='text' value='@Model.Endereco.Bairro' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='cep'>CEP</label>
+            <input class='text-input' id='cep' name='Aluno.Endereco.Cep' required type='text' value='@Model.Endereco.Cep' disabled>
+        </p>
+        <p class='field half'>
+            @Html.LabelFor(model => model.Endereco.IdCidade, "Cidade", htmlAttributes: new { @class = "label", @for = "cidade" })
+
+            @Html.DropDownList("Aluno.Endereco.IdCidade", (SelectList)ViewBag.IdCidade, htmlAttributes: new { @class = "text-input", @required = "required", @disable = "disabled" })
+        </p>
+
+        <h2 class='field'>Pai</h2>
+
+        <p class='field'>
+            <label class='label required' for='nomePai'>Nome</label>
+            <input class='text-input' id='nomePai' name='Aluno.Pai.Nome' required type='text' value='@Model.Pai.Nome' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='rgPai'>Rg</label>
+            <input class='text-input' id='rgPai' name='Aluno.Pai.Rg' required type='text' value='@Model.Pai.Rg' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='cpfPai'>Cpf</label>
+            <label class="valid_cpf hide cpf_pai">CPF inválido.</label>
+            <input class='text-input' id='cpfPai' name='Aluno.Pai.Cpf' required type='text' value='@Model.Pai.Cpf' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='profissaoPai'>Profissão</label>
+            <input class='text-input' id='profissaoPai' name='Aluno.Pai.Profissao' required type='text' value='@Model.Pai.Profissao' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='celularPai'>Celular</label>
+            <input class='text-input' id='celularPai' name='Aluno.Pai.Celular' required type='text' value='@Model.Pai.Celular' disabled>
+        </p>
+
+        <h2 class='field'>Mãe</h2>
+
+        <p class='field'>
+            <label class='label required' for='nomeMae'>Nome</label>
+            <input class='text-input' id='nomeMae' name='Aluno.Mae.Nome' required type='text' value='@Model.Mae.Nome' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='rgMae'>Rg</label>
+            <input class='text-input' id='rgMae' name='Aluno.Mae.Rg' required type='text' value='@Model.Mae.Rg' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label' for='cpfMae'>Cpf</label>
+            <label class="valid_cpf hide cpf_mae">CPF inválido.</label>
+            <input class='text-input' id='cpfMae' name='Aluno.Mae.Cpf' required type='text' value='@Model.Mae.Cpf' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='profissaoMae'>Profissão</label>
+            <input class='text-input' id='profissaoMae' name='Aluno.Mae.Profissao' required type='text' value='@Model.Mae.Profissao' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='celularMae'>Celular</label>
+            <input class='text-input' id='celularMae' name='Aluno.Mae.Celular' required type='text' value='@Model.Mae.Celular' disabled>
+        </p>
+        <p class='field half'>
+            <a class='button' href="@Url.Action("Index")">Voltar</a>
+        </p>
+    </div>
+
+</div>

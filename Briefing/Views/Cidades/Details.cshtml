@@ -1,0 +1,30 @@
+﻿@model Briefing.Models.Cidade
+
+<div class="container">
+    <div class="form">
+
+        <div class="form-title">
+            <a class="button_circle_form left" href="@Url.Action("Index")">
+                <span class="material-icons">arrow_back</span>
+            </a>
+            <h2 class=''>Visualizar Cidade</h2>
+        </div>
+
+        <h2 class='field'>Cidade</h2>
+
+        <p class='field half'>
+            <label class='label required' for='nome'>Nome da cidade</label>
+            <input class='text-input' id='nome' name='nome' required type='text' value='@Model.Nome' disabled>
+        </p>
+        <p class='field half'>
+            <label class='label required' for='estadoNome'>Nome do Estado</label>
+            <input class='cpf text-input' id='estadoNome' name='estadoNome' required type='text' value='@Model.EstadoNome' disabled>
+        </p>
+
+        <p class='field half'>
+            <a class='button' href="@Url.Action("Index")">Voltar</a>
+        </p>
+    </div>
+
+</div>
+

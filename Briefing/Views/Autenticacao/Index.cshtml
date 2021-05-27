@@ -1,0 +1,32 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="containerLogin">
+    <div class="content first-content">
+        <div class="first-column">
+            <h2 class="title title-primary">Olá</h2>
+            <p class="description description-primary">Ainda não está cadastrado?</p>
+            <a id="signup" class="btn btn-primary" href="@Url.Action("Create")">Cadastrar</a>
+        </div>
+        <div class="second-column">
+            <h2 class="title title-second">Login</h2>
+            <p class="description description-second">entre com seu email e senha:</p>
+            @using (Html.BeginForm("Login", "Autenticacao", FormMethod.Post, new { @class="formLogin"}))
+            {
+
+                <label class="label-input" for="">
+                    <i class="far fa-envelope icon-modify"></i>
+                    <input type="email" placeholder="Email" name="Usuario.Email">
+                </label>
+
+                <label class="label-input" for="">
+                    <i class="fas fa-lock icon-modify"></i>
+                    <input type="password" placeholder="Senha" name="Usuario.Senha">
+                </label>
+
+                <button class="btn btn-second">Entrar</button>
+            }
+        </div>
+    </div>
+</div>

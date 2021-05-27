@@ -1,0 +1,74 @@
+﻿
+@model Briefing.Models.Usuario
+
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="container">
+
+    @using (Html.BeginForm())
+    {
+        <div class="form">
+            @Html.AntiForgeryToken()
+
+            <div class="form-title">
+                <a class="button_circle_form left" href="@Url.Action("Index")">
+                    <span class="material-icons">arrow_back</span>
+                </a>
+                <h2 class=''>Usuário</h2>
+            </div>
+
+            <p class='field required'>
+                <label class='label required' for='name'>Nome</label>
+                <input class='text-input' id='name' name='Usuario.Nome' required type='text' value=''>
+            </p>
+            <p class='field required half'>
+                <label class='label required' for='cpfAluno'>CPF</label>
+                <label class="valid_cpf hide cpf_aluno">CPF inválido.</label>
+                <input class='cpf text-input' id='cpfAluno' name='Usuario.Cpf' required type='text'>
+            </p>
+            <p class='field required half'>
+                <label class='label required' for='sexo'>Sexo</label>
+                <input class='text-input' id='sexo' name='Usuario.Sexo' required type='text'>
+            </p>
+            <p class='field required half'>
+                <label class='label required' for='telefone'>Telefone</label>
+                <input class='text-input' id='telefone' name='Usuario.Telefone' required type='tel'>
+            </p>
+            <p class='field required half'>
+                <label class='label required' for='email'>E-mail</label>
+                <input class='text-input' id='email' name='Usuario.Email' required type='email'>
+            </p>
+            <p class='field required half'>
+                <label class='label required' for='senha'>Senha</label>
+                <input class='text-input' id='senha' name='Usuario.Senha' required type='password'>
+            </p>
+
+            <h2 class='field'>Endereço</h2>
+
+            <p class='field required half'>
+                <label class='label required' for='rua'>Rua</label>
+                <input class='text-input' id='rua' name='Usuario.Endereco.Rua' required type='text'>
+            </p>
+            <p class='field required half'>
+                <label class='label required' for='bairro'>Bairro</label>
+                <input class='text-input' id='bairro' name='Usuario.Endereco.Bairro' required type='text'>
+            </p>
+            <p class='field required half'>
+                <label class='label required' for='cep'>CEP</label>
+                <input class='text-input' id='cep' name='Usuario.Endereco.Cep' required type='text'>
+            </p>
+            <p class='field required half'>
+                @Html.LabelFor(model => model.Endereco.IdCidade, "Cidade", htmlAttributes: new { @class = "label", @for = "cidade" })
+
+                @Html.DropDownList("Usuario.Endereco.IdCidade", (SelectList)ViewBag.IdCidade, htmlAttributes: new { @class = "text-input", @required = "required" })
+            </p>
+
+            <p class='field half'>
+                <input class='button button-submit' type='submit' value='Enviar'>
+            </p>
+        </div>
+
+    }
+</div>
