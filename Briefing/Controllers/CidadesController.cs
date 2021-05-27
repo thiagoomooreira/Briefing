@@ -27,9 +27,8 @@ namespace Briefing.Controllers
         {
             Cidade cidade = cidadesDao.Busca(id);
             if (cidade == null)
-            {
                 return HttpNotFound();
-            }
+            
             return View(cidade);
         }
 
@@ -57,10 +56,8 @@ namespace Briefing.Controllers
         {
             Cidade cidade = cidadesDao.Busca(id);
             if (cidade == null)
-            {
                 return HttpNotFound();
-            }
-
+            
             return View(cidade);
         }
 
@@ -80,9 +77,8 @@ namespace Briefing.Controllers
         {
             Cidade cidade = cidadesDao.Busca(id);
             if (cidade == null)
-            {
                 return HttpNotFound();
-            }
+            
             return View(cidade);
         }
 

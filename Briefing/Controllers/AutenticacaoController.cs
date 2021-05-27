@@ -24,9 +24,8 @@ namespace Briefing.Controllers
         public ActionResult Login(Usuario usuario)
         {
             if(usuario == null)
-            {
                 return View("Index");
-            }
+            
 
             var eLogado = usuariosDao.VerificaLogin(usuario);
             if (eLogado != null)

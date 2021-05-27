@@ -80,6 +80,9 @@
 .mt-2{
     margin-top:10px;
 }
+.mt-3{
+    margin-top:25px;
+}
 
 .bg-58af9b {
     background-color: #58af9b !important;
@@ -92,3 +95,6 @@
     float:left !important;
 }
 
+.center{
+    text-align:center;
+}

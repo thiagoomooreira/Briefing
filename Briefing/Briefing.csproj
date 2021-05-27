@@ -162,6 +162,7 @@
     <Content Include="Views\Autenticacao\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Autenticacao\Create.cshtml" />
+    <Content Include="ScriptDataBase\dataBase.dacpac" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

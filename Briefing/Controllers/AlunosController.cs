@@ -29,12 +29,9 @@ namespace Briefing.Controllers
             Aluno aluno = alunosDao.Busca(id);
 
             if (aluno == null)
-            {
                 return HttpNotFound();
-            }
-
+            
             ViewBag.IdCidade = new SelectList(cidadesDao.Lista(), "Id", "Nome", aluno.Endereco);
-
             return View(aluno);
         }
 
@@ -65,12 +62,9 @@ namespace Briefing.Controllers
         {
             Aluno aluno = alunosDao.Busca(id);
             if (aluno == null)
-            {
                 return HttpNotFound();
-            }
-
+            
             ViewBag.IdCidade = new SelectList(cidadesDao.Lista(), "Id", "Nome");
-
             return View(aluno);
         }
 
@@ -97,9 +91,8 @@ namespace Briefing.Controllers
             Aluno aluno = alunosDao.Busca(id);
 
             if (aluno == null)
-            {
                 return HttpNotFound();
-            }
+            
             return View(aluno);
         }
 
